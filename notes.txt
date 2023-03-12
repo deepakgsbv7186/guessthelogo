@@ -1,0 +1,89 @@
+for color palette
+https://colorhunt.co/palette/3a10784e31aa2f58cd3795bd
+
+
+1. Logo image with name
+    - via api or any other method
+    - create object which containes logo-image and logo-name
+
+2. Create the front end
+
+3. Add functionality
+    - on button click, letter fill in the textfield
+    - backspace to remove last letter
+
+4. Javascript work start
+    - populate the buttons using JS dynamically
+        const box = `
+            <div id='box'>
+                <button id='button-1'>Button</button>
+            </div>`;
+        document.body.innerHTML = box;
+    - total number of buttons is equal to 16
+    - the buttons must contain the correct letter for logo-name
+    - which means need to add some random letters as well
+
+
+5. Check the answer
+    - compare the logo-name with userinput
+    - based on correct or not, display "wrong: please try again"
+    - if correct then move to next one
+
+6. Move to next one
+    - change submit to move next
+
+
+
+// Get the value from the buttons and put it the input field
+let answerInput = document.getElementById("answer");
+let fillValue = (id) => {
+  const userInput = document.getElementById(id).innerHTML;
+  answerInput.value += userInput;
+};
+
+// act as backspace
+function removeLastItem() {
+  let textContains = document.getElementById("answer").value;
+  answerInput.value = textContains.slice(0, -1);
+}
+function getRandomInt(n) {
+    return Math.floor(Math.random() * n);
+}
+function shuffleLetters(str) {
+    let newStr = str.split("");
+    let n = newStr.length;
+    
+    for (let i = 0; i < n; i++) {
+        let j = getRandomInt(n);
+        
+        let temp = newStr[i];
+        newStr[i] = newStr[j];
+        newStr[j] = temp;
+        
+        str = newStr.join("");
+        return str;
+    }
+}
+
+// const correctAnswer = 'TWEETER';
+
+function populateButtons(answer = "GOOGLE") {
+  let textButton = document.getElementById("text-buttons");
+  let alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (answer.length == 16){
+      console.log("okay report");
+    }else{
+        // need to extract letters, add with random letters to make it 16
+        for(let i=answer.length; i<16; i++){
+
+            answer += alphabets[i];
+        }
+        console.log(answer);
+    }
+
+  const randomLetters = shuffleLetters(answer);
+  for (let letter in randomLetters) {
+    textButton.innerHTML += `<button onclick="fillValue(id='${randomLetters[letter]}')">${randomLetters[letter]}</button>`;
+  }
+}
+populateButtons();

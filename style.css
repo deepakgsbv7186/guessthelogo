@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --grey: #eee;
+  --dark-grey: #222831;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #3A1078;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.container{
+  background-color: #2F58CD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  justify-content: space-evenly;
+  width: 40%;
+  border-radius: 10px;
+}
+.container h2{
+  font-size: 2rem;
+}
+.container img{
+  width: 100px;
+  border-radius: 10px;
+}
+.userinput{
+  display: flex;
+  gap: 20px;
+}
+.userinput button, #submit{
+  border: none;
+  outline: none;
+  width: 50px;
+  /* background: #b44141; */
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #b44141;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.userinput button:hover{
+  background: #b44141;
+  /* font-size: 1.6rem; */
+  /* font-weight: bolder; */
+  color: aliceblue;
+
+}
+.userinput input{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+input[type=text] {
+  background-color: #3CBC8D;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+#text-buttons{
+  display: flex;
+  width: 360px;
+  flex-wrap: wrap;
+}
+#text-buttons > *{
+  padding: 5px;
+  font-size: 1.2rem;
+  width: 40px;
+  margin: 2px;
+}
+#text-buttons button{
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#text-buttons button:hover{
+  background-color: #0da431;
+}
+
+#submit{
+  width: auto;
+  background-color: whitesmoke;
+  color: black;
+}
