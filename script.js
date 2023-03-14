@@ -22,9 +22,9 @@ function shuffleLetters(s) {
     return s;                        // Return shuffled string
   }
 
-// const correctAnswer = 'TWEETER';
+// const correctAnswer = 'TWITTER';
 
-function populateButtons(answer = "TWEETER") {
+function populateButtons(answer = "TWITTER") {
   let textButton = document.getElementById("text-buttons");
   let alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if (answer.length == 16){
@@ -48,7 +48,7 @@ populateButtons();
 function checkAnswer(){
     let submitTextChange = document.getElementById("submit");
     // console.log(submitTextChange);
-    if(answerInput.value=="TWEETER"){
+    if(answerInput.value=="TWITTER"){
         submitTextChange.innerText = "MATCHED";
         submitTextChange.style.backgroundColor = "#3CBC8D";
     }else{
